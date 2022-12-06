@@ -13,20 +13,33 @@
     />
   </head>
   <body>
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row" style="padding-left: 260px">
+      Report a case
+      <div class="col-md-6" style="background-color:rgb(192, 233, 255) ; padding: 20px; border-radius: 10px; width: 350px;">
         <form action="/caseReport" method="POST">
-          <div >
+          <div>
             <div class="mb-3">
               <label for="p_name" class="form-label">Person's name</label>
-              <input type="text" class="form-control" id="p_name" name="personName" />
+              <input
+                type="text"
+                class="form-control"
+                id="p_name"
+                name="personName"
+              />
             </div>
             <div class="mb-3">
               <label for="p_age" class="form-label">Age</label>
-              <input type="text" class="form-control" id="p_age" name="age" />
+              <input
+                type="text"
+                class="form-control"
+                id="p_age"
+                name="age"
+              />
             </div>
             <div class="mb-3">
-              <label for="pcontact" class="form-label">Person's contact</label>
+              <label for="pcontact" class="form-label"
+                >Person's contact</label
+              >
               <input
                 type="number"
                 class="form-control"
@@ -44,7 +57,9 @@
               />
             </div>
             <div class="mb-3">
-              <label for="rcontact" class="form-label">Reporter's contact</label>
+              <label for="rcontact" class="form-label"
+                >Reporter's contact</label
+              >
               <input
                 type="number"
                 class="form-control"
@@ -55,11 +70,21 @@
             </div>
             <div class="mb-3">
               <label for="rdesc" class="form-label">Description</label>
-              <input type="text" class="form-control" id="rdesc" name="description" />
+              <input
+                type="text"
+                class="form-control"
+                id="rdesc"
+                name="description"
+              />
             </div>
             <div class="mb-3">
               <label for="dor" class="form-label">Date of report</label>
-              <input type="date" class="form-control" id="dor" name="dateOfReport" />
+              <input
+                type="date"
+                class="form-control"
+                id="dor"
+                name="dateOfReport"
+              />
             </div>
           </div>
 
@@ -67,10 +92,9 @@
             Submit
           </button>
         </form>
-
-        <!-- <p>Already have an account!<a href="/login">Login here</a></p> -->
       </div>
-
+    </div>
+    <div class="row">
       <h1>ALL REPORTED CASES</h1>
       <div class="col-md-5" style="margin-top: 100px; margin-left: 50px">
         <table class="table table-bordered">

@@ -70,16 +70,19 @@ const login = async (req, res, next) => {
                         // let user = addUser.role
                         // console.log(user);
                         if (addUser.role === 'admin') {
-                            res.redirect('/adminPage')
-                            // window.location.href = 'http://localhost:4040/adminPage';
+                            // res.redirect('/adminHome')
+                            // window.location.href = 'http://localhost:4040/adminHome.html'
+                            window.location.href = "http://127.0.0.1:5501/views/adminHome.html"
                         }
                         else if (addUser.role === 'hospital') {
-                            res.redirect('/hospitalPage')
-                            // window.location.href = 'http://localhost:4040/hospitalPage';
+                            // res.redirect('/hospitalHome')
+                            // window.location.href = 'http://localhost:4040/hospitalHome.html';
+                            window.location.href = "http://127.0.0.1:5501/views/hospitalHome.html"
                         }
                         else {
-                            res.redirect('/publicPage');
-                            // window.location.href = 'http://localhost:4040/publicPage';
+                            // res.redirect('/publicPage');
+                            // window.location.href = 'http://localhost:4040/publicPage.html';
+                            window.location.href = "http://127.0.0.1:5501/views/publicPage.html"
                         }
 
                         // res.json({

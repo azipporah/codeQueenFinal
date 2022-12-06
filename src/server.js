@@ -16,7 +16,8 @@ const router = require('./routes/signup.post') //importing the routes file
 const port = process.env.PORT || 8000;
 
 // MIDDLEWARE
-app.set("view engine", "ejs")
+// app.set("view engine", "ejs")
+app.use(cors())
 app.use(express.json()) // parse requests of content-type - application/json
 app.use(express.urlencoded({ extended: true }));
 app.use('/', router);
@@ -25,62 +26,70 @@ app.use(bodyParser.json());
 
 // connecting to front-end
 app.use(express.static('views'))
-
-// EJS GET ROUTES
 app.get('/', (req, res) => {
-    res.render("publicPage")
-    // res.status(200).sendFile(__dirname + "register.ejs")
+    res.status(200).sendFile(__dirname + "home.html")
 })
 
-app.get('/register', (req, res) => {
-    res.render("register")
-    // res.status(200).sendFile(__dirname + "register.ejs")
-})
+// // EJS GET ROUTES
+// app.get('/home', (req, res) => {
+//     res.render("publicPage")
+//     // res.status(200).sendFile(__dirname + "register.ejs")
+// })
 
-app.get('/login', (req, res) => {
-    res.render("login")
-    // res.status(200).sendFile(__dirname + "register.ejs")
-})
+// app.get('/register', (req, res) => {
+//     res.render("register")
+//     // res.status(200).sendFile(__dirname + "register.ejs")
+// })
 
-app.get('/userTable', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("users")
-})
+// app.get('/login', (req, res) => {
+//     res.render("login")
+//     // res.status(200).sendFile(__dirname + "register.ejs")
+// })
 
-app.get('/adminPage', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("adminPage")
-})
+// app.get('/userTable', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("users")
+// })
 
-app.get('/hospitalPage', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("hospitalPage")
-})
+// app.get('/adminPage', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("adminPage")
+// })
 
-app.get('/stat', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("statistics")
-})
+// app.get('/hospitalPage', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("hospitalPage")
+// })
 
-app.get('/createHospital', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("createHospital")
-})
+// app.get('/stat', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("statistics")
+// })
 
-app.get('/updateProfile', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("updateProfile")
-})
+// app.get('/createHospital', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("createHospital")
+// })
 
-app.get('/confirmedCases', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("confirmedCases")
-})
+// app.get('/updateProfile', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("updateProfile")
+// })
 
-app.get('/reportedCases', (req, res) => {
-    // res.status(200).sendFile(__dirname + "report.users.ejs")
-    res.render("reportedCases")
-})
+// app.get('/confirmedCases', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("confirmedCases")
+// })
+
+// app.get('/reportedCases', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("reportedCases")
+// })
+
+// app.get('/adminPage2', (req, res) => {
+//     // res.status(200).sendFile(__dirname + "report.users.ejs")
+//     res.render("adminPage2")
+// })
 
 // CONNECTING TO THE DATABASE
 mongoose.connect(process.env.url, {

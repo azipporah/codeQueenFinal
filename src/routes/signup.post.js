@@ -190,6 +190,14 @@ router.get("/all-deceased-cases", async (req, res) => {
     });
 });
 
+// counting totals
+router.get("/countDocuments", async (req, res) => {
+    confirmedCaseSchema.countDocuments({}).then((result) => {
+        return res.json(result)  
+    })
+    
+})
+
 
 // PATCH ROUTES
 // patch for patients status
